@@ -39,16 +39,7 @@ export default {
 
   menus: [
     {
-      name: "",
-      items: [
-        { name: "", href: "#" },
-        { name: "", href: "#" },
-        { name: "", href: "#" },
-        { name: "", href: "#" },
-      ],
-    },
-    {
-      name: "company",
+      name: "Entreprise",
       items: [
         { name: "QUI SOMMES-NOUS", href: "#" },
         { name: "ENTREPRISES", href: "#" },
@@ -57,7 +48,7 @@ export default {
       ],
     },
     {
-      name: "legal",
+      name: "légal",
       items: [
         { name: "terms & conditions", href: "#" },
         { name: "privacy policy", href: "#" },
