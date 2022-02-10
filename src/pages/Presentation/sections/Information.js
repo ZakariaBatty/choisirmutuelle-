@@ -27,21 +27,21 @@ function Information() {
                 icon="touch_app"
                 title={
                   <>
-                    Feel the
+                    Formulaire
                     <br />
-                    Material Kit
+                    Particulier
                   </>
                 }
-                description="All the MUI components that you need in a development have been re-design with the new look."
+                description="Demander conseil auprès d’un spécialiste qui pourra vous orienter dans vos démarches."
               />
               <RotatingCardBack
                 image={bgBack}
-                title="Discover More"
-                description="You will save a lot of time going from prototyping to full-functional code because all elements are implemented."
+                title="Découvrir plus"
+                description="Comment faire pour obtenir un devis mutuelle santé en ligne ?"
                 action={{
                   type: "internal",
-                  route: "/sections/page-sections/page-headers",
-                  label: "start with header",
+                  route: "#",
+                  label: "Cliquez ici",
                 }}
               />
             </RotatingCard>
