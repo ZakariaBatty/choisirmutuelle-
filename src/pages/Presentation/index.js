@@ -88,13 +88,6 @@ function Presentation() {
             >
               Des conseillers pour vous aider
             </MKTypography>
-            {/* <MKButton
-              textAlign="center"
-              color="default"
-              sx={{ color: ({ palette: { dark } }) => dark.main }}
-            >
-              JE COMPARE
-            </MKButton> */}
           </Grid>
         </Container>
       </MKBox>

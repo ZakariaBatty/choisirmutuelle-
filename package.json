@@ -1,17 +1,17 @@
 {
-  "name": "material-kit-2-react",
+  "name": "choisirmutuelle.fr",
   "version": "2.0.0",
   "private": true,
-  "author": "Creative Tim",
-  "license": "See license in https://www.creative-tim.com/license",
-  "description": "React version of Material Kit 2 by Creative Tim",
-  "homepage": "https://demos.creative-tim.com/material-kit-react/#/",
+  "author": "zakaria batty",
+  "license": "",
+  "description": "Choisirmutuelle.fr, choisir mutuelle france devis mutuelle, mutuelle hospitalisation, comparateur mutuelle, mutuelle santé, comparatif mutuelle santé, comparatif mutuelle, mutuelle moins chère, mutuelle de santé, mutuelle pas chère, mutuelle complémentaire, comparatif mutuelles, mutuelle pas cher, comparateur mutuelle santé, mutuel  santé, mutuelle dentaire, mutuelle en ligne, comparateur de mutuelle, mutuelles santé",
+  "homepage": "https://choisirmutuelle.ga/",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/ct-material-kit-react/issues"
+    "url": "https://github.com/ZakariaBatty"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/ct-material-kit-react.git"
+    "url": "https://github.com/ZakariaBatty"
   },
   "engines": {
     "node": "14 || 15 || 16",
