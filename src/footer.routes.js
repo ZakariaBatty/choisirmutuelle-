@@ -36,7 +36,17 @@ export default {
       link: "#",
     },
   ],
+
   menus: [
+    {
+      name: "",
+      items: [
+        { name: "", href: "#" },
+        { name: "", href: "#" },
+        { name: "", href: "#" },
+        { name: "", href: "#" },
+      ],
+    },
     {
       name: "company",
       items: [
@@ -47,35 +57,26 @@ export default {
       ],
     },
     {
-      name: "help & support",
-      items: [
-        { name: "contact us", href: "https://www.creative-tim.com/contact-us" },
-        { name: "knowledge center", href: "https://www.creative-tim.com/knowledge-center" },
-        { name: "custom development", href: "https://services.creative-tim.com/" },
-        { name: "sponsorships", href: "https://www.creative-tim.com/sponsorships" },
-      ],
-    },
-    {
       name: "legal",
       items: [
-        { name: "terms & conditions", href: "https://www.creative-tim.com/terms" },
-        { name: "privacy policy", href: "https://www.creative-tim.com/privacy" },
-        { name: "licenses (EULA)", href: "https://www.creative-tim.com/license" },
+        { name: "terms & conditions", href: "#" },
+        { name: "privacy policy", href: "#" },
+        { name: "contact us", href: "#" },
       ],
     },
   ],
   copyright: (
     <MKTypography variant="button" fontWeight="regular">
-      All rights reserved. Copyright &copy; {date} Material Kit by{" "}
+      Tous droits réservés . Copyright &copy; {date}
       <MKTypography
         component="a"
-        href="#"
+        href="https://akwascreation.com/"
         target="_blank"
         rel="noreferrer"
         variant="button"
         fontWeight="regular"
       >
-        Creative Tim
+        I By Akwas Création
       </MKTypography>
       .
     </MKTypography>

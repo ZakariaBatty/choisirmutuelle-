@@ -22,7 +22,7 @@ import Grid from "@mui/material/Grid";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
-import MKBadge from "components/MKBadge";
+// import MKBadge from "components/MKBadge";
 import MKTypography from "components/MKTypography";
 
 // Presentation page components
@@ -46,10 +46,10 @@ function DesignBlocks() {
       </Grid>
       <Grid item xs={12} lg={9}>
         <Grid container spacing={3}>
-          {items.map(({ image, name, count, route, pro }) => (
+          {items.map(({ image, name, route }) => (
             <Grid item xs={12} md={4} sx={{ mb: 2 }} key={name}>
-              <Link to={pro ? "/" : route}>
-                <ExampleCard image={image} name={name} count={count} pro={pro} />
+              <Link target="_blank" to={route}>
+                <ExampleCard image={image} name={name} />
               </Link>
             </Grid>
           ))}
@@ -60,7 +60,7 @@ function DesignBlocks() {
 
   return (
     <MKBox component="section" my={6} py={6}>
-      <Container>
+      {/* <Container>
         <Grid
           container
           item
@@ -85,7 +85,7 @@ function DesignBlocks() {
             perfect pages.
           </MKTypography>
         </Grid>
-      </Container>
+      </Container> */}
       <Container sx={{ mt: 6 }}>{renderData}</Container>
     </MKBox>
   );

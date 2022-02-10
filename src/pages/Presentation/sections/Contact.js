@@ -8,7 +8,7 @@ import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
 // Image
-import bgImage from "assets/images/illustrations/illustration-reset.jpg";
+import bgImage from "assets/images/mutual.png";
 
 function ContactUs() {
   return (
@@ -47,7 +47,7 @@ function ContactUs() {
               mt={-3}
             >
               <MKTypography variant="h3" color="white">
-                Rapide, gratuit et sans rngagement !
+                Rapide, gratuit et sans engagement !
               </MKTypography>
             </MKBox>
             <MKBox p={3}>
@@ -92,6 +92,15 @@ function ContactUs() {
                       type="date"
                       variant="standard"
                       label="Date Naissance"
+                      InputLabelProps={{ shrink: true }}
+                      fullWidth
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <MKInput
+                      type="date"
+                      variant="standard"
+                      label="Date d'effet"
                       InputLabelProps={{ shrink: true }}
                       fullWidth
                     />
