@@ -105,7 +105,7 @@ function Presentation() {
         {/* <Counters /> */}
         <Information />
         {/* <Pages /> */}
-        <Container sx={{ mt: 6 }}>
+        <Container id="particulers" sx={{ mt: 6 }}>
           <BuiltByDevelopers />
         </Container>
         <Container>
@@ -138,7 +138,9 @@ function Presentation() {
           </Grid>
         </Container>
         <DesignBlocks />
-        <Contact />
+        <div id="compare">
+          <Contact />
+        </div>
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />

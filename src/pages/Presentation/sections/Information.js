@@ -17,7 +17,7 @@ import bgBack from "assets/images/rotating-card-bg-back.jpeg";
 
 function Information() {
   return (
-    <MKBox component="section" py={6} my={6}>
+    <MKBox id="entreprises" component="section" py={6} my={6}>
       <Container>
         <Grid container item xs={11} spacing={3} alignItems="center" sx={{ mx: "auto" }}>
           <Grid item xs={12} lg={4} sx={{ mx: "auto" }}>
@@ -40,7 +40,7 @@ function Information() {
                 description="Comment faire pour obtenir un devis mutuelle santé en ligne ?"
                 action={{
                   type: "internal",
-                  route: "#",
+                  route: "#compare",
                   label: "Cliquez ici",
                 }}
               />
@@ -61,15 +61,13 @@ function Information() {
                 />
               </Grid>
             </Grid>
-            <Grid container spacing={3} sx={{ mt: { xs: 0, md: 6 } }}>
+            <Grid container spacing={3} sx={{ mt: { xs: 0, md: 0 } }}>
               <Grid item xs={12} md={12}>
                 <DefaultInfoCard
                   title="Un réseau mutualiste solidaire au service de votre santé"
-                  description="Etude mutuelle santé personnalisée. Vous bénéficiez d’une protection santé innovante, personnalisée qui suit les évolutions de votre vie et s’adapte à vos besoins.
-                  Choisir mutuelle ne s’arrête pas au simple remboursement des soins, un service d’information, d’orientation et d’accompagnement
-                  vous soutient au fil des années pour vous aider à préserver durablement votre capital santé.
-                  Afin d'obtenir un devis de mutuelle santé personnalisé, veuillez renseigner les informations ci-dessous.
-                  Vous pouvez exprimer vos besoins en prestations santé grâce aux curseurs gradués."
+                  description="Etude mutuelle santé entreprise. Spécialistes de la protection sociale des personnes, nos conseillers entreprises mettent leur expertise à votre service pour définir le niveau de couverture dont vous avez besoin pour chaque catégorie de personnel et module de prestations
+                  Vous souhaitez des renseignements sur nos solutions santé et prévoyance pour les entreprises
+                  Merci de compléter le formulaire ci-dessous, nos conseillers vous répondront dans les plus brefs délais.."
                 />
               </Grid>
             </Grid>

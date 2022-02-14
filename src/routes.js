@@ -5,15 +5,15 @@ const routes = [
   },
   {
     name: "ENTREPRISES",
-    href: "#",
+    href: "#entreprises",
   },
   {
     name: "PARTICULIERS",
-    href: "#",
+    href: "#particulers",
   },
   {
     name: "PARTENAIRES",
-    href: "#",
+    href: "#partenaires",
   },
 ];
 

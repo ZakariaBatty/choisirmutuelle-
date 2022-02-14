@@ -105,15 +105,6 @@ function ContactUs() {
                       fullWidth
                     />
                   </Grid>
-                  <Grid item xs={12} md={6}>
-                    <MKInput
-                      type="date"
-                      variant="standard"
-                      label="Date d'effet"
-                      InputLabelProps={{ shrink: true }}
-                      fullWidth
-                    />
-                  </Grid>
                 </Grid>
                 <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
                   <MKButton type="submit" variant="gradient" color="info">
