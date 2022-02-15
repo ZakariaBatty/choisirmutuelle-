@@ -4,6 +4,7 @@
   "private": true,
   "author": "zakaria batty",
   "license": "",
+  "proxy": "https://api.choisirmutuelle.ga",
   "description": "Choisirmutuelle.fr, choisir mutuelle france devis mutuelle, mutuelle hospitalisation, comparateur mutuelle, mutuelle santé, comparatif mutuelle santé, comparatif mutuelle, mutuelle moins chère, mutuelle de santé, mutuelle pas chère, mutuelle complémentaire, comparatif mutuelles, mutuelle pas cher, comparateur mutuelle santé, mutuel  santé, mutuelle dentaire, mutuelle en ligne, comparateur de mutuelle, mutuelles santé",
   "homepage": "https://choisirmutuelle.ga/",
   "bugs": {
@@ -27,6 +28,7 @@
     "@testing-library/jest-dom": "5.11.4",
     "@testing-library/react": "11.1.0",
     "@testing-library/user-event": "12.1.10",
+    "axios": "^0.26.0",
     "chroma-js": "2.1.2",
     "flatpickr": "4.6.9",
     "prop-types": "15.7.2",

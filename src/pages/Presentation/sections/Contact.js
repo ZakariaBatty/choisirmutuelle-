@@ -1,5 +1,7 @@
+import React, { useState } from "react";
 // @mui material components
 import Grid from "@mui/material/Grid";
+import { sendMail } from "functions/sendMail";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
@@ -7,10 +9,36 @@ import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+
 // Image
 import bgImage from "assets/images/mutual.png";
 
-function ContactUs() {
+const ContactUs = () => {
+  const [mail, setMail] = useState({
+    nom: "",
+    prenom: "",
+    tele: "",
+    email: "",
+    nombredenfants: "",
+    regime: "",
+    ville: "",
+    codepostal: "",
+    datenaissance: "",
+    datedeffets: "",
+  });
+
+  const handleInputChange = (e) => {
+    setMail({ ...mail, [e.target.name]: e.target.value });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    sendMail(mail);
+  };
+
   return (
     <>
       <Grid container spacing={3} alignItems="center">
@@ -53,37 +81,105 @@ function ContactUs() {
             <MKBox p={3}>
               {/* <MKTypography variant="body2" color="text" mb={3}>
               </MKTypography> */}
-              <MKBox width="100%" component="form" method="post" autocomplete="off">
+              <MKBox
+                onSubmit={handleFormSubmit}
+                width="100%"
+                component="form"
+                method="post"
+                autocomplete="off"
+              >
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
-                    <MKInput variant="standard" label="Nom" fullWidth />
+                    <MKInput
+                      variant="standard"
+                      label="Nom"
+                      onChange={(event) => handleInputChange(event)}
+                      name="nom"
+                      fullWidth
+                    />
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <MKInput variant="standard" label="Prénom" fullWidth />
+                    <MKInput
+                      variant="standard"
+                      label="Prénom"
+                      name="prenom"
+                      onChange={(event) => handleInputChange(event)}
+                      fullWidth
+                    />
                   </Grid>
                 </Grid>
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
-                    <MKInput type="number" variant="standard" label="Tél" fullWidth />
+                    <MKInput
+                      type="number"
+                      variant="standard"
+                      label="Tél"
+                      name="tel"
+                      onChange={(event) => handleInputChange(event)}
+                      fullWidth
+                    />
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <MKInput type="email" variant="standard" label="Email" fullWidth />
+                    <MKInput
+                      type="email"
+                      variant="standard"
+                      label="Email"
+                      name="email"
+                      onChange={(event) => handleInputChange(event)}
+                      fullWidth
+                    />
                   </Grid>
                 </Grid>
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
-                    <MKInput type="number" variant="standard" label="Nombre d'enfants" fullWidth />
+                    <MKInput
+                      type="number"
+                      variant="standard"
+                      label="Nombre d'enfants"
+                      name="nombredenfants"
+                      onChange={(event) => handleInputChange(event)}
+                      fullWidth
+                    />
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <MKInput variant="standard" label="Régime" fullWidth />
+                    <InputLabel id="demo-simple-select-label">Régime</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      label="Régime"
+                      variant="standard"
+                      name="regime"
+                      onChange={(event) => handleInputChange(event)}
+                      fullWidth
+                    >
+                      <MenuItem value="Régime général">Régime général</MenuItem>
+                      <MenuItem value="Travailleur non salarié">Travailleur non salarié</MenuItem>
+                      <MenuItem value="Régime local Alsace Moselle">
+                        Régime local Alsace Moselle
+                      </MenuItem>
+                      <MenuItem value="Régime Agricole">Régime Agricole</MenuItem>
+                    </Select>
                   </Grid>
                 </Grid>
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
-                    <MKInput variant="standard" label="Ville" fullWidth />
+                    <MKInput
+                      variant="standard"
+                      label="Ville"
+                      name="ville"
+                      onChange={(event) => handleInputChange(event)}
+                      fullWidth
+                    />
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <MKInput type="number" variant="standard" label="Code postal" fullWidth />
+                    <MKInput
+                      type="number"
+                      variant="standard"
+                      label="Code postal"
+                      name="codepostal"
+                      onChange={(event) => handleInputChange(event)}
+                      fullWidth
+                    />
                   </Grid>
                 </Grid>
                 <Grid container spacing={3}>
@@ -93,6 +189,8 @@ function ContactUs() {
                       variant="standard"
                       label="Date Naissance"
                       InputLabelProps={{ shrink: true }}
+                      name="datenaissance"
+                      onChange={(event) => handleInputChange(event)}
                       fullWidth
                     />
                   </Grid>
@@ -102,6 +200,8 @@ function ContactUs() {
                       variant="standard"
                       label="Date d'effet"
                       InputLabelProps={{ shrink: true }}
+                      name="datedeffets"
+                      onChange={(event) => handleInputChange(event)}
                       fullWidth
                     />
                   </Grid>
@@ -118,6 +218,6 @@ function ContactUs() {
       </Grid>
     </>
   );
-}
+};
 
 export default ContactUs;
