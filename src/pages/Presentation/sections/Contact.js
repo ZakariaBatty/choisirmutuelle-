@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 // @mui material components
 import Grid from "@mui/material/Grid";
-import { sendMail } from "functions/sendMail";
-
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKInput from "components/MKInput";
@@ -12,15 +10,15 @@ import MKTypography from "components/MKTypography";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-
-// Image
 import bgImage from "assets/images/mutual.png";
+import axios from "axios";
+axios.defaults.withCredentials = true;
 
 const ContactUs = () => {
   const [mail, setMail] = useState({
     nom: "",
     prenom: "",
-    tele: "",
+    tel: "",
     email: "",
     nombredenfants: "",
     regime: "",
@@ -29,14 +27,24 @@ const ContactUs = () => {
     datenaissance: "",
     datedeffets: "",
   });
+  const [error, setError] = React.useState("");
 
   const handleInputChange = (e) => {
     setMail({ ...mail, [e.target.name]: e.target.value });
   };
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    sendMail(mail);
+  const handelSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("/send-mail", mail, {
+        withCredentials: true,
+      });
+      if (res) {
+        setError(res.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -79,10 +87,11 @@ const ContactUs = () => {
               </MKTypography>
             </MKBox>
             <MKBox p={3}>
+              {error}
               {/* <MKTypography variant="body2" color="text" mb={3}>
               </MKTypography> */}
               <MKBox
-                onSubmit={handleFormSubmit}
+                onSubmit={handelSubmit}
                 width="100%"
                 component="form"
                 method="post"
