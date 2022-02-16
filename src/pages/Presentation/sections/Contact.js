@@ -36,7 +36,7 @@ const ContactUs = () => {
   const handelSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/send-mail", mail, {
+      const res = await axios.post("https://api.choisirmutuelle.ga/send-mail", mail, {
         withCredentials: true,
       });
       if (res) {
