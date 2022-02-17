@@ -1,19 +1,19 @@
 const routes = [
   {
     name: "QUI SOMMES-NOUS ",
-    href: "#",
+    href: "/about",
   },
   {
     name: "ENTREPRISES",
-    href: "#entreprises",
+    href: "/#entreprises",
   },
   {
     name: "PARTICULIERS",
-    href: "#particulers",
+    href: "/#particulers",
   },
   {
     name: "PARTENAIRES",
-    href: "#partenaires",
+    href: "/#partenaires",
   },
 ];
 

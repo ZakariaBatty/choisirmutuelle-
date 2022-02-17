@@ -41,10 +41,10 @@ export default {
     {
       name: "Entreprise",
       items: [
-        { name: "QUI SOMMES-NOUS", href: "#" },
-        { name: "ENTREPRISES", href: "#" },
-        { name: "PARTICULIERS", href: "#" },
-        { name: "PARTENAIRES", href: "#" },
+        { name: "QUI SOMMES-NOUS", href: "/about" },
+        { name: "ENTREPRISES", href: "/#entreprises" },
+        { name: "PARTICULIERS", href: "/#particulers" },
+        { name: "PARTENAIRES", href: "/#partenaires" },
       ],
     },
     {

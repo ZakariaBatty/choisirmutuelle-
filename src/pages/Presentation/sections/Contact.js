@@ -43,7 +43,7 @@ const ContactUs = () => {
         setError(res.data.message);
       }
     } catch (error) {
-      console.log(error);
+      console.log(error.response);
     }
   };
 
