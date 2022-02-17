@@ -6,7 +6,7 @@ import Card from "@mui/material/Card";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-// import MKButton from "components/MKButton";
+import MKButton from "components/MKButton";
 
 // import MKSocialButton from "components/MKSocialButton";
 
@@ -88,6 +88,11 @@ function Presentation() {
             >
               Des conseillers pour vous aider
             </MKTypography>
+            <Grid mt="4" container item xs={6} lg={6} justifyContent="center" mx="auto">
+              <MKButton rel="noreferrer"  href="/#compare"  color="white" size="small">
+                Je Compare
+              </MKButton>
+            </Grid>
           </Grid>
         </Container>
       </MKBox>
