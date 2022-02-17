@@ -39,8 +39,7 @@ function Information() {
                 title="Découvrir plus"
                 description="Comment faire pour obtenir un devis mutuelle santé en ligne ?"
                 action={{
-                  type: "internal",
-                  route: "#compare",
+                  route: "/#compare",
                   label: "Cliquez ici",
                 }}
               />

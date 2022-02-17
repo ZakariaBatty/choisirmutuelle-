@@ -21,7 +21,7 @@ function AboutSection() {
       <Container>
         <Grid container item xs={11} spacing={3} alignItems="center" sx={{ mx: "auto" }}>
           <Grid item xs={12} lg={4} sx={{ mx: "auto" }}>
-            <RotatingCard>
+             <RotatingCard>
               <RotatingCardFront
                 image={bgFront}
                 icon="touch_app"
@@ -33,6 +33,15 @@ function AboutSection() {
                   </>
                 }
                 description="Demander conseil auprès d’un spécialiste qui pourra vous orienter dans vos démarches."
+              />
+              <RotatingCardBack
+                image={bgBack}
+                title="Découvrir plus"
+                description="Comment faire pour obtenir un devis mutuelle santé en ligne ?"
+                action={{
+                  route: "/#compare",
+                  label: "Cliquez ici",
+                }}
               />
             </RotatingCard>
           </Grid>

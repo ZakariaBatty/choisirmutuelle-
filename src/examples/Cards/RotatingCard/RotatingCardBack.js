@@ -1,18 +1,3 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
@@ -63,9 +48,7 @@ function RotatingCard({ color, image, title, description, action }) {
           <MKBox width="50%" mt={4} mb={2} mx="auto">
             {action.type === "external" ? (
               <MKButton
-                component={MuiLink}
                 href={action.route}
-                target="_blank"
                 rel="noreferrer"
                 color="white"
                 size="small"
@@ -74,7 +57,7 @@ function RotatingCard({ color, image, title, description, action }) {
                 {action.label}
               </MKButton>
             ) : (
-              <MKButton component={Link} to={action.route} color="white" size="small" fullWidth>
+              <MKButton rel="noreferrer"  href={action.route}  color="white" size="small" fullWidth>
                 {action.label}
               </MKButton>
             )}

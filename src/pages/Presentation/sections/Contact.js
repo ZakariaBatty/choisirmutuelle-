@@ -49,7 +49,7 @@ const ContactUs = () => {
 
   return (
     <>
-      <Grid container spacing={3} alignItems="center">
+      <Grid id="compare" container spacing={3} alignItems="center">
         <Grid item xs={12} lg={4}>
           <MKBox
             display={{ xs: "none", lg: "flex" }}

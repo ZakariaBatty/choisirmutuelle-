@@ -138,9 +138,7 @@ function Presentation() {
           </Grid>
         </Container>
         <DesignBlocks />
-        <div id="compare">
           <Contact />
-        </div>
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
