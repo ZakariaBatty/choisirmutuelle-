@@ -36,14 +36,15 @@ const ContactUs = () => {
   const handelSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://api.choisirmutuelle.ga/send-mail", mail, {
+      const res = await axios.post("https://api.choisirmutuelle.ga/create-pdf", mail, {
         withCredentials: true,
       });
       if (res) {
         setError(res.data.message);
+        console.log(res);
       }
     } catch (error) {
-      console.log(error.response);
+      console.log(error);
     }
   };
 
@@ -61,7 +62,7 @@ const ContactUs = () => {
             sx={{ backgroundImage: `url(${bgImage})` }}
           />
         </Grid>
-        <Grid item xs={12} sm={10} md={8} lg={8} xl={8}>
+        <Grid item xs={12} sm={10} md={12} lg={8} xl={8}>
           <MKBox
             bgColor="white"
             borderRadius="xl"
