@@ -7,12 +7,21 @@ import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
+import { css } from "@emotion/react";
+import PropagateLoader from "react-spinners/PropagateLoader";
+
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import bgImage from "assets/images/mutual.png";
 import axios from "axios";
-axios.defaults.withCredentials = true;
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: #fff;
+  color: "#fff";
+`;
 
 const ContactUs = () => {
   const [mail, setMail] = useState({
@@ -27,7 +36,10 @@ const ContactUs = () => {
     datenaissance: "",
     datedeffets: "",
   });
-  const [error, setError] = React.useState("");
+
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = React.useState(false);
+  const [error, setError] = React.useState(false);
 
   const handleInputChange = (e) => {
     setMail({ ...mail, [e.target.name]: e.target.value });
@@ -36,18 +48,17 @@ const ContactUs = () => {
   const handelSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://api.choisirmutuelle.ga/create-pdf", mail, {
-        withCredentials: true,
-      });
+      setLoading(!loading);
+      const res = await axios.post("https://choisirmutuelle.ga/create-pdf", mail);
       if (res) {
-        setError(res.data.message);
-        console.log(res);
-      }
-    } catch (error) {
-      console.log(error);
+        setMessage(res.data.message);
+        setLoading(false);
+      } 
+    } catch (err) {
+      setError(err?.response?.data?.error);
+      setLoading(false);
     }
   };
-
   return (
     <>
       <Grid id="compare" container spacing={3} alignItems="center">
@@ -88,9 +99,20 @@ const ContactUs = () => {
               </MKTypography>
             </MKBox>
             <MKBox p={3}>
-              {error}
-              {/* <MKTypography variant="body2" color="text" mb={3}>
-              </MKTypography> */}
+              <MKTypography
+                variant="body2"
+                style={{ color: "#417406", fontSize: "24px", textAlign: "center" }}
+                mb={3}
+              >
+                {message}
+              </MKTypography>
+              <MKTypography
+                variant="body2"
+                style={{ color: "red", fontSize: "24px", textAlign: "center" }}
+                mb={3}
+              >
+                {error}
+              </MKTypography>
               <MKBox
                 onSubmit={handelSubmit}
                 width="100%"
@@ -225,6 +247,9 @@ const ContactUs = () => {
             </MKBox>
           </MKBox>
         </Grid>
+        <div style={{ position: "absolute", left: "62%", right: "48%" }}>
+          <PropagateLoader loading={loading} css={override} size={30} />
+        </div>
       </Grid>
     </>
   );
