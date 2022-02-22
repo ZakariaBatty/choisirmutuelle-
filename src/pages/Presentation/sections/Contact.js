@@ -15,7 +15,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import bgImage from "assets/images/mutual.png";
 import axios from "axios";
-// axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true;
 
 const override = css`
   display: block;
@@ -50,7 +50,9 @@ const ContactUs = () => {
     e.preventDefault();
     try {
       setLoading(!loading);
-      const res = await axios.post("https://api.choisirmutuelle.ga/create-pdf", mail);
+      const res = await axios.post("https://api.choisirmutuelle.ga/create-pdf", mail, {
+        withCredentials: true,
+      });
       if (res) {
         setMessage(res.data.message);
         setLoading(false);
