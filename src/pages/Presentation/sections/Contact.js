@@ -50,12 +50,13 @@ const ContactUs = () => {
     e.preventDefault();
     try {
       setLoading(!loading);
-      const res = await axios.post("https://api.choisirmutuelle.ga/create-pdf", mail);
+      const res = await axios.post("http://fetch.choisirmutuelle.ga/create-pdf", mail);
       if (res) {
         setMessage(res.data.message);
         setLoading(false);
       }
     } catch (err) {
+      console.log(err);
       setError(err?.response?.data?.error);
       setLoading(false);
     }
