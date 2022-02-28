@@ -56,7 +56,7 @@ const ContactUs = () => {
         setLoading(false);
       }
     } catch (err) {
-      console.log(err);
+      console.log(err?.response?.data);
       setError(err?.response?.data?.error);
       setLoading(false);
     }
