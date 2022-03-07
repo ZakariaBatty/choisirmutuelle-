@@ -37,7 +37,6 @@ const ContactUs = () => {
     datenaissance: "",
     datedeffets: "",
   });
-
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = React.useState(false);
   const [error, setError] = React.useState(false);
@@ -50,11 +49,14 @@ const ContactUs = () => {
     e.preventDefault();
     try {
       setLoading(!loading);
-      const res = await axios.post("https://apii.choisirmutuelle.ga/create-pdf", mail);
-      if (res) {
-        setMessage(res.data.message);
-        setLoading(false);
-      }
+      await axios.post("https://apii.choisirmutuelle.ga/create-pdf", mail).then((res) => {
+        return new Promise((resolve) => {
+          if (!res) resolve("fail");
+          console.log({ message: "good", res });
+          setMessage(res.data.message);
+          setLoading(false);
+        });
+      });
     } catch (err) {
       console.log(err?.response?.data);
       setError(err?.response?.data?.error);
